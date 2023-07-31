@@ -90,9 +90,26 @@
     }
 
     &-info {
+      border-bottom: 1px solid transparent;
       color: var(--grey-900);
       font-size: 18px;
       text-decoration: none;
+      transition: 0.2s;
+
+      &:hover {
+        color: var(--primary);
+      }
+
+      &:active {
+        color: var(--primary-active);
+        border-color: var(--primary-active);
+      }
+
+      &:focus-visible {
+        color: var(--primary);
+        outline: none;
+        border-color: var(--primary);
+      }
     }
   }
 }

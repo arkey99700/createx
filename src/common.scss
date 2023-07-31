@@ -1,0 +1,98 @@
+:root {
+  --main: #ffffff;
+  --primary: #ff5a30;
+  --primary-active: #fc3300;
+  --grey-200: #f4f5f6;
+  --grey-300: #e5e8ed;
+  --grey-400: #d7dadd;
+  --grey-600: #9a9ca5;
+  --grey-700: #787a80;
+  --grey-800: #424551;
+  --grey-900: #1e212c;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 92px;
+
+  &__logo {
+    display: block;
+    margin-right: 60px;
+  }
+
+  &__menu {
+    &-list {
+      list-style: none;
+    }
+
+    &-list {
+      display: flex;
+      -moz-column-gap: 40px;
+      column-gap: 40px;
+    }
+
+    &-link {
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      color: var(--grey-800);
+      line-height: 160%;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+
+      &:hover {
+        color: var(--primary);
+      }
+
+      &:active {
+        color: var(--primary-active);
+      }
+
+      &:focus-visible {
+        color: var(--primary);
+        border-color: var(--primary);
+        outline: none;
+      }
+    }
+  }
+
+  &__contact {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 1fr 1fr;
+    -moz-column-gap: 12px;
+    column-gap: 12px;
+
+    &:first-of-type {
+      margin-left: auto;
+    }
+
+    &:not(:last-child) {
+      margin-right: 36px;
+    }
+
+    &-icon {
+      grid-row: 1 / 3;
+    }
+
+    &-caption {
+      color: var(--grey-800);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    &-info {
+      color: var(--grey-900);
+      font-size: 18px;
+      text-decoration: none;
+    }
+  }
+}

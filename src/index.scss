@@ -1,0 +1,18 @@
+.hero {
+  height: calc(100vh - 92px);
+
+  &__wrapper,
+  &__slide {
+    height: inherit;
+  }
+
+  &__slide {
+    background-image: url("./assets/bg-image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__title {
+    margin: 0;
+  }
+}

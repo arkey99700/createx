@@ -1,5 +1,10 @@
 .hero {
+  position: relative;
   height: calc(100vh - 92px);
+
+  &__content {
+    padding: 220px 0 0;
+  }
 
   &__wrapper,
   &__slide {
@@ -8,11 +13,74 @@
 
   &__slide {
     background-image: url("./assets/bg-image.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   &__title {
-    margin: 0;
+    max-width: 570px;
+    margin: 0 0 24px;
+    color: var(--main);
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &--primary {
+      color: var(--primary);
+    }
+  }
+
+  &__text {
+    margin-bottom: 60px;
+    max-width: 595px;
+    color: var(--main);
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  &__buttons {
+    display: flex;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  &__progress {
+    position: absolute;
+    left: calc((100vw - 1230px) / 2);
+    bottom: 120px;
+    display: flex;
+    -moz-column-gap: 4px;
+    column-gap: 4px;
+    width: 724px;
+
+    &-item {
+      flex: 1;
+      height: 54px;
+      padding: 0;
+      background: none;
+      border: none;
+      border-bottom: 2px solid var(--main);
+      color: var(--main);
+      font-size: 28px;
+      font-weight: 700;
+      text-align: start;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover:not(&--active) {
+        opacity: 0.65;
+      }
+
+      &--active {
+        opacity: 1;
+      }
+    }
   }
 }

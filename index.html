@@ -130,9 +130,9 @@
         <div class="hero__wrapper swiper-wrapper">
           <div class="hero__slide swiper-slide">
             <div class="hero__content container">
+              <!-- prettier-ignore -->
               <h1 class="hero__title">
-                Create
-                <em class="hero__title--primary">X</em>
+                Create<span class="hero__title--primary">X</span>
                 Construction
               </h1>
               <p class="hero__text">
@@ -140,13 +140,22 @@
                 consequat, dignissim vitae proin ipsum sed. Pellentesque nec
                 turpis purus eget pellentesque integer ipsum elementum felis.
               </p>
-              <a href="/about" class="button">Learn more about us</a>
-              <button class="button button--primary">SUBMIT REQUEST</button>
+              <div class="hero__buttons">
+                <a
+                  href="/about"
+                  class="button button--large button--outline button--white"
+                  draggable="false">
+                  Learn more about us
+                </a>
+                <button class="button button--large">SUBMIT REQUEST</button>
+              </div>
             </div>
           </div>
         </div>
         <div class="hero__progress">
-          <button class="hero__progress-item">01</button>
+          <button class="hero__progress-item hero__progress-item--active">
+            01
+          </button>
           <button class="hero__progress-item">02</button>
           <button class="hero__progress-item">03</button>
           <button class="hero__progress-item">04</button>

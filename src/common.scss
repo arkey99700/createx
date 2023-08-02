@@ -2,13 +2,13 @@
   --main: #ffffff;
   --primary: #ff5a30;
   --primary-active: #fc3300;
-  --grey-200: #f4f5f6;
-  --grey-300: #e5e8ed;
-  --grey-400: #d7dadd;
-  --grey-600: #9a9ca5;
-  --grey-700: #787a80;
-  --grey-800: #424551;
-  --grey-900: #1e212c;
+  --gray-200: #f4f5f6;
+  --gray-300: #e5e8ed;
+  --gray-400: #d7dadd;
+  --gray-600: #9a9ca5;
+  --gray-700: #787a80;
+  --gray-800: #424551;
+  --gray-900: #1e212c;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -51,7 +51,7 @@
     &-link {
       padding-bottom: 2px;
       border-bottom: 1px solid transparent;
-      color: var(--grey-800);
+      color: var(--gray-800);
       line-height: 160%;
       font-weight: 700;
       text-decoration: none;
@@ -90,7 +90,7 @@
     }
 
     &-caption {
-      color: var(--grey-800);
+      color: var(--gray-800);
       font-size: 14px;
       font-weight: 700;
       line-height: 150%;
@@ -98,7 +98,7 @@
 
     &-info {
       border-bottom: 1px solid transparent;
-      color: var(--grey-900);
+      color: var(--gray-900);
       font-size: 18px;
       text-decoration: none;
       transition: 0.2s;
@@ -197,9 +197,27 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+
+    &--large {
+      width: 80px;
+      height: 80px;
+    }
   }
 }
 
-.slider__button {
-  position: absolute;
+.section {
+  &-title {
+    color: var(--gray-900);
+    text-align: center;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+
+  &-text {
+    color: var(--gray-700);
+    text-align: center;
+    font-size: 18px;
+    line-height: 150%;
+  }
 }

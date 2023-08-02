@@ -129,3 +129,64 @@
     }
   }
 }
+
+.video {
+  &__title {
+    margin: 120px 0 24px;
+  }
+
+  &__text {
+    margin-bottom: 60px;
+  }
+
+  &__player {
+    position: relative;
+    height: 500px;
+    margin-bottom: 60px;
+  }
+
+  &__play-button,
+  &__mute-button {
+    position: absolute;
+  }
+
+  &__play-button {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-icon {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__mute-button {
+    bottom: 32px;
+    left: 32px;
+    width: 40px;
+    height: 40px;
+    background: var(--main) !important;
+    opacity: 0.2;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      opacity: 0.4;
+    }
+
+    &-icon {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__source {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}

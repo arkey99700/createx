@@ -24,8 +24,17 @@
         opacity: 1;
       }
 
+      & svg {
+        width: 24px;
+        height: 24px;
+      }
+
       &--prev {
         left: 32px;
+
+        & svg {
+          transform: rotateZ(180deg);
+        }
       }
 
       &--next {

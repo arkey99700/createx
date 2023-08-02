@@ -174,8 +174,8 @@
     &:hover,
     &:focus-visible {
       color: var(--main);
-      background-color: var(--primary-active);
-      border-color: var(--primary-active);
+      background-color: var(--primary);
+      border-color: var(--primary);
     }
     &:active {
       background-color: var(--primary-active);

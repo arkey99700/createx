@@ -6,6 +6,34 @@
     padding: 220px 0 0;
   }
 
+  &__slider {
+    &-button {
+      position: absolute;
+      top: 50%;
+      background-color: var(--main) !important;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      opacity: 0.5;
+
+      &:hover,
+      &:focus-visible,
+      &:active {
+        opacity: 1;
+      }
+
+      &--prev {
+        left: 32px;
+      }
+
+      &--next {
+        right: 32px;
+      }
+    }
+  }
+
   &__wrapper,
   &__slide {
     height: inherit;
@@ -75,6 +103,14 @@
       transition: 0.2s;
 
       &:hover:not(&--active) {
+        opacity: 0.65;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:focus-visible:not(&--active) {
         opacity: 0.65;
       }
 

@@ -506,3 +506,23 @@
     }
   }
 }
+
+.partners {
+  background-color: var(--gray-200);
+
+  &__title {
+    padding: 60px 0 80px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    -moz-column-gap: 27px;
+    column-gap: 27px;
+    padding-bottom: 130px;
+  }
+
+  &__item {
+    width: 100%;
+  }
+}

@@ -128,7 +128,7 @@
       <section class="hero swiper-container">
         <button
           class="button button--round hero__slider-button hero__slider-button--prev">
-          <svg>
+          <svg class="hero__slider-button-icon">
             <use xlink:href="./src/assets/sprite.svg#arrow"></use>
           </svg>
         </button>
@@ -167,7 +167,7 @@
         </div>
         <button
           class="button button--round hero__slider-button hero__slider-button--next">
-          <svg>
+          <svg class="hero__slider-button-icon">
             <use xlink:href="./src/assets/sprite.svg#arrow"></use>
           </svg>
         </button>
@@ -264,7 +264,6 @@
             <button class="button question__button">Send</button>
           </form>
         </section>
-        <div class="services__background"></div>
         <h2 class="section-title services__title">Our services</h2>
         <p class="section-text">
           Createx Construction Bureau is a construction giant with a full range
@@ -313,11 +312,87 @@
             </svg>
           </a>
         </div>
-        <div class="services__learn-more container">
-          <span class="services__learn-more-title">
-            Learn more about our services
-          </span>
-          <a href="/" class="button button--large">View services</a>
+        <div class="section-more container">
+          <span class="section-more__title">Learn more about our services</span>
+          <a href="/" class="button button--large section-more__button">
+            View services
+          </a>
+        </div>
+      </section>
+      <section class="projects">
+        <header class="projects__header container">
+          <h2 class="section-title projects__title">
+            Browse our selected projects and learn more about our work
+          </h2>
+          <div class="projects__slider-buttons">
+            <button
+              class="button button--round projects__slider-button projects__slider-button--prev">
+              <svg class="projects__slider-button-icon">
+                <use xlink:href="./src/assets/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <button
+              class="button button--round projects__slider-button projects__slider-button--next">
+              <svg class="projects__slider-button-icon">
+                <use xlink:href="./src/assets/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="projects__cards swiper-container container">
+          <div class="projects__cards-wrapper swiper-wrapper">
+            <div class="projects__card swiper-slide">
+              <img
+                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                alt=""
+                class="projects__card-image" />
+              <div class="projects__card-description">
+                <span class="projects__card-title">Red Finger Building</span>
+                <span class="projects__card-category">Business Centers</span>
+                <a
+                  href="/"
+                  class="button button--outline projects__card-button">
+                  View Project
+                </a>
+              </div>
+            </div>
+            <div class="projects__card swiper-slide">
+              <img
+                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                alt=""
+                class="projects__card-image" />
+              <div class="projects__card-description">
+                <span class="projects__card-title">Cubes Building</span>
+                <span class="projects__card-category">Business Centers</span>
+                <a
+                  href="/"
+                  class="button button--outline projects__card-button">
+                  View Project
+                </a>
+              </div>
+            </div>
+            <div class="projects__card swiper-slide">
+              <img
+                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                alt=""
+                class="projects__card-image" />
+              <div class="projects__card-description">
+                <span class="projects__card-title">The Pencil Building</span>
+                <span class="projects__card-category">Stores & Malls</span>
+                <a
+                  href="/"
+                  class="button button--outline projects__card-button">
+                  View Project
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-more container">
+          <span class="section-more__title">Explore all our works</span>
+          <a href="/" class="button button--large section-more__button">
+            View portfolio
+          </a>
         </div>
       </section>
     </main>

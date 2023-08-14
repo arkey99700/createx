@@ -526,3 +526,154 @@
     width: 100%;
   }
 }
+
+.clients {
+  background-color: var(--gray-200);
+  padding-bottom: 120px;
+
+  &__content {
+    position: relative;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 60px;
+    padding-top: 20px;
+    text-align: left;
+  }
+
+  &__slider {
+    position: relative;
+    max-width: 600px;
+
+    &-controls {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      transform: translateY(25%);
+    }
+
+    &-button {
+      background-color: transparent;
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        background-color: var(--primary);
+        fill: var(--main);
+      }
+
+      &--prev {
+        transform: rotateZ(180deg);
+      }
+
+      &-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+
+    &-image {
+      width: 75px;
+      height: 75px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+    }
+
+    &-text {
+      color: var(--gray-800);
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 160%;
+    }
+
+    &-name {
+      margin-bottom: 4px;
+      font-weight: 700;
+      line-height: 160%;
+    }
+
+    &-position {
+      color: var(--gray-700);
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: -180px;
+    right: 0;
+  }
+}
+
+.figures {
+  &__title {
+    margin: 180px 0 60px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    -moz-column-gap: 48px;
+    column-gap: 48px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 148px;
+    height: 148px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+    border-radius: 50%;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--yellow &-progress-bar,
+    &--yellow &-progress-background {
+      stroke: #f89828;
+    }
+
+    &--red &-progress-bar,
+    &--red &-progress-background {
+      stroke: #f52f6e;
+    }
+
+    &--green &-progress-bar,
+    &--green &-progress-background {
+      stroke: #03cea4;
+    }
+
+    &--blue &-progress-bar,
+    &--blue &-progress-background {
+      stroke: #5a87fc;
+    }
+
+    &-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &-background {
+        opacity: 0.3;
+      }
+    }
+  }
+}

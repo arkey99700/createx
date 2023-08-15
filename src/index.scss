@@ -624,6 +624,7 @@
     justify-content: center;
     -moz-column-gap: 48px;
     column-gap: 48px;
+    margin-bottom: 180px;
   }
 
   &__item {
@@ -675,5 +676,18 @@
         opacity: 0.3;
       }
     }
+  }
+}
+
+.news {
+  &__title {
+    margin: 0 0 60px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 705px 495px;
+    grid-template-rows: 540px;
+    gap: 30px;
   }
 }

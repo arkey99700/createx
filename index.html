@@ -242,21 +242,24 @@
           <h2 class="question__title">Want to know more? Ask us a question:</h2>
           <form action="/" class="question__form">
             <div class="form__item question__item">
-              <label for="name" class="form__label">Name</label>
-              <input id="name" class="form__input" placeholder="Your name" />
+              <label for="question-name" class="form__label">Name</label>
+              <input
+                id="question-name"
+                class="form__input"
+                placeholder="Your name" />
             </div>
             <div class="form__item question__item">
-              <label for="phone" class="form__label">Phone</label>
+              <label for="question-phone" class="form__label">Phone</label>
               <input
-                id="phone"
+                id="question-phone"
                 type="text"
                 class="form__input"
                 placeholder="Your phone" />
             </div>
             <div class="form__item">
-              <label for="message" class="form__label">Message</label>
+              <label for="question-message" class="form__label">Message</label>
               <input
-                id="message"
+                id="question-message"
                 type="text"
                 class="form__input"
                 placeholder="Your message" />
@@ -673,6 +676,62 @@
           <a href="/" class="button button--large section-more__button">
             View all news
           </a>
+        </div>
+      </section>
+      <section class="details">
+        <div class="container">
+          <div class="details__form-wrapper">
+            <span class="details__form-title">
+              A quick way to discuss details
+            </span>
+            <form action="/" class="details__form">
+              <div class="form__item">
+                <label for="details-name" class="form__label">Name*</label>
+                <input
+                  id="details-name"
+                  type="text"
+                  class="form__input"
+                  placeholder="Your name" />
+              </div>
+              <div class="form__item">
+                <label for="details-phone" class="form__label">Phone*</label>
+                <input
+                  id="details-phone"
+                  type="text"
+                  class="form__input"
+                  placeholder="Your phone number" />
+              </div>
+              <div class="form__item">
+                <label for="details-email" class="form__label">Email</label>
+                <input
+                  id="details-email"
+                  type="text"
+                  class="form__input"
+                  placeholder="Your working email" />
+              </div>
+              <div class="form__item">
+                <label for="details-message" class="form__label">
+                  Message*
+                </label>
+                <textarea
+                  id="details-message"
+                  type="text"
+                  class="form__input"
+                  placeholder="Your message"></textarea>
+              </div>
+              <div class="form__item form__item--checkbox">
+                <input
+                  id="details-checkbox"
+                  type="checkbox"
+                  class="form__input" />
+                <label for="details-checkbox" class="form__item">
+                  I agree to receive communications from Createx Construction
+                  Bureau.
+                </label>
+              </div>
+              <button class="button">Send request</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>

@@ -753,3 +753,33 @@
     }
   }
 }
+
+.details {
+  padding: 80px 0;
+
+  &__form {
+    &-wrapper {
+      @include mixin.shadow-regular;
+
+      width: 415px;
+      margin-left: auto;
+      padding: 48px 40px;
+      border-radius: 4px;
+      border: 1px solid var(--gray-300, #e5e8ed);
+      background-color: var(--main);
+    }
+
+    &-title {
+      display: block;
+      margin-bottom: 24px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    & .form__item:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

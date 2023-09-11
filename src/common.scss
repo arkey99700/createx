@@ -7,12 +7,22 @@
   --gray-200: #f4f5f6;
   --gray-300: #e5e8ed;
   --gray-400: #d7dadd;
+  --gray-500: #b3b7bc;
   --gray-600: #9a9ca5;
   --gray-700: #787a80;
   --gray-800: #424551;
   --gray-900: #1e212c;
   font-family: "Ubuntu", sans-serif;
   color: var(--gray-900);
+}
+
+::-moz-selection {
+  color: var(--main);
+  background: var(--primary);
+}
+
+::selection {
+  background: var(--primary);
 }
 
 a {
@@ -167,6 +177,7 @@ a {
   &:hover,
   &:focus-visible,
   &:active {
+    color: var(--main);
     background-color: var(--primary-active);
     outline: none;
   }
@@ -343,7 +354,7 @@ a {
       height: 16px;
       padding: 0;
       border-radius: 3px;
-      border: 1px solid var(--gray-400);
+      border: 1px solid var(--gray-500);
       background-color: var(--main);
       transition: none;
 
@@ -388,4 +399,9 @@ a {
       color: var(--gray-600);
     }
   }
+}
+
+.footer {
+  padding: 80px 0;
+  background-color: var(--gray-900);
 }

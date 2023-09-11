@@ -756,6 +756,10 @@
 
 .details {
   padding: 80px 0;
+  background-image: url("./assets/form-bg-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   &__form {
     &-wrapper {

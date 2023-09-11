@@ -345,10 +345,12 @@ a {
       border-radius: 3px;
       border: 1px solid var(--gray-400);
       background-color: var(--main);
+      transition: none;
 
       &:checked {
-        background-color: var(--primary);
-        border-color: var(--primary);
+        background-image: url("./assets/icons/checkbox-checked.svg");
+        background-position: center;
+        border-color: transparent;
       }
     }
 

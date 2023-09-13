@@ -57,6 +57,8 @@ a {
 
     &-img {
       display: block;
+      width: 130px;
+      height: 22px;
     }
 
     &:focus-visible {
@@ -404,4 +406,64 @@ a {
 .footer {
   padding: 80px 0;
   background-color: var(--gray-900);
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    max-width: 495px;
+
+    &-top {
+      display: flex;
+      -moz-column-gap: 60px;
+      column-gap: 60px;
+      margin-bottom: 24px;
+    }
+
+    &-text {
+      margin: 0;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 150%;
+      opacity: 0.6;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo-img {
+    display: block;
+    width: 130px;
+    height: 22px;
+  }
+
+  &__social {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
+
+    &-item {
+      display: block;
+
+      &-icon,
+      &-link {
+        display: block;
+        width: 24px;
+        height: 24px;
+      }
+
+      &-icon {
+        opacity: 0.6;
+        transition: 0.2s ease-out;
+      }
+
+      &:hover &-icon {
+        opacity: 1;
+      }
+    }
+  }
 }

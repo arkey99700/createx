@@ -1,10 +1,11 @@
+import animate from "./src/scripts/animate";
+
 const goToTopElement = document.querySelector(".go-to-top");
 const goToTopText = goToTopElement.querySelector(".go-to-top__text");
 const goToTopButton = goToTopElement.querySelector(".go-to-top__button");
 const figuresSection = document.querySelector(".figures");
 
 function animateFigure(figure, data) {
-  const animationDuration = 2500;
   const figureProgressBar = figure.querySelector(".figures__item-progress-bar");
   const figureProgressNumber = figure.querySelector(".figures__item-value");
   const figureCircumference = 2 * Math.PI * 74;
@@ -18,29 +19,17 @@ function animateFigure(figure, data) {
     `${figureCircumference}px`
   );
 
-  let startTime;
-
-  requestAnimationFrame(function animationTick(currentTime) {
-    if (!startTime) {
-      startTime = currentTime;
-    }
-
-    let progress = (currentTime - startTime) / animationDuration;
-
-    if (progress > 1) progress = 1;
-
-    progress = 1 - Math.pow(1 - progress, 4);
-
-    figureProgressNumber.textContent =
-      Math.ceil(progress * data.value) + (data.isPercent ? "%" : "");
-    figureProgressBar.setAttribute(
-      "stroke-dashoffset",
-      `${figureCircumference - progress * maxLength}px`
-    );
-
-    if (progress < 1) {
-      requestAnimationFrame(animationTick);
-    }
+  animate({
+    timing: (progress) => Math.sqrt(1 - Math.pow(progress - 1, 2)),
+    callback: (progress) => {
+      figureProgressNumber.textContent =
+        Math.ceil(progress * data.value) + (data.isPercent ? "%" : "");
+      figureProgressBar.setAttribute(
+        "stroke-dashoffset",
+        `${figureCircumference - progress * maxLength}px`
+      );
+    },
+    duration: 3000,
   });
 }
 
@@ -61,16 +50,37 @@ function animateFigures() {
 function figuresObserverCallback(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        animateFigures();
-        observer.disconnect();
-      }, 200);
+      animateFigures();
+      observer.disconnect();
     }
   });
 }
 
 const figuresObserver = new IntersectionObserver(figuresObserverCallback);
 figuresObserver.observe(figuresSection);
+
+function animateSmoothScroll() {
+  const duration = 100;
+  let startTime;
+
+  requestAnimationFrame(function smoothScrollTick(currentTime) {
+    if (!startTime) {
+      startTime = currentTime;
+    }
+
+    let progress = (currentTime - startTime) / duration;
+
+    if (progress > 1) {
+      progress = 1;
+    }
+
+    document.documentElement.scrollTop += duration * progress;
+
+    if (progress < 1) {
+      requestAnimationFrame(smoothScrollTick);
+    }
+  });
+}
 
 window.addEventListener("scroll", () => {
   const rect = document.body.getBoundingClientRect();

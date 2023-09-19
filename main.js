@@ -2,7 +2,6 @@ import animate from "./src/scripts/animate";
 
 const goToTopElement = document.querySelector(".go-to-top");
 const goToTopText = goToTopElement.querySelector(".go-to-top__text");
-const goToTopButton = goToTopElement.querySelector(".go-to-top__button");
 const figuresSection = document.querySelector(".figures");
 
 function animateFigure(figure, data) {
@@ -29,7 +28,7 @@ function animateFigure(figure, data) {
         `${figureCircumference - progress * maxLength}px`
       );
     },
-    duration: 3000,
+    duration: 2000,
   });
 }
 
@@ -59,29 +58,6 @@ function figuresObserverCallback(entries, observer) {
 const figuresObserver = new IntersectionObserver(figuresObserverCallback);
 figuresObserver.observe(figuresSection);
 
-function animateSmoothScroll() {
-  const duration = 100;
-  let startTime;
-
-  requestAnimationFrame(function smoothScrollTick(currentTime) {
-    if (!startTime) {
-      startTime = currentTime;
-    }
-
-    let progress = (currentTime - startTime) / duration;
-
-    if (progress > 1) {
-      progress = 1;
-    }
-
-    document.documentElement.scrollTop += duration * progress;
-
-    if (progress < 1) {
-      requestAnimationFrame(smoothScrollTick);
-    }
-  });
-}
-
 window.addEventListener("scroll", () => {
   const rect = document.body.getBoundingClientRect();
 
@@ -96,4 +72,51 @@ window.addEventListener("scroll", () => {
   } else {
     goToTopElement.style.opacity = 0;
   }
+});
+
+const videoPlayerElement = document.querySelector(".video__player");
+const playVideoButton = videoPlayerElement.querySelector(".video__play-button");
+const muteVideoButton = videoPlayerElement.querySelector(".video__mute-button");
+
+function toggleVideo(videoPlayerElement) {
+  const video = videoPlayerElement.querySelector("video");
+
+  if (video.paused) {
+    video.play();
+    playVideoButton.style.opacity = 0;
+  } else {
+    video.pause();
+    playVideoButton.style.opacity = 1;
+  }
+}
+
+function toggleVideoSound(videoPlayerElement) {
+  const video = videoPlayerElement.querySelector("video");
+
+  if (video.muted) {
+    video.muted = false;
+
+    videoPlayerElement.querySelector(".video__mute-button-icon").style.display =
+      "block";
+    videoPlayerElement.querySelector(
+      ".video__unmute-button-icon"
+    ).style.display = "none";
+  } else {
+    video.muted = true;
+
+    videoPlayerElement.querySelector(".video__mute-button-icon").style.display =
+      "none";
+    videoPlayerElement.querySelector(
+      ".video__unmute-button-icon"
+    ).style.display = "block";
+  }
+}
+
+videoPlayerElement.addEventListener("click", () =>
+  toggleVideo(videoPlayerElement)
+);
+
+muteVideoButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleVideoSound(videoPlayerElement);
 });

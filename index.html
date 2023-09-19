@@ -151,10 +151,15 @@
             <svg class="video__mute-button-icon">
               <use xlink:href="./src/assets/sprite.svg#volume-off"></use>
             </svg>
+            <svg class="video__unmute-button-icon" style="display: none">
+              <use xlink:href="./src/assets/sprite.svg#volume-on"></use>
+            </svg>
           </button>
           <video
+            id="main-page-video"
             class="video__source"
-            src="./src/assets/about-video.mp4"></video>
+            src="./src/assets/sample-5s.mp4"
+            loop></video>
         </div>
       </section>
       <section class="values">

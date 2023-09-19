@@ -141,11 +141,22 @@
     position: relative;
     height: 500px;
     margin-bottom: 60px;
+
+    &:hover .video__mute-button,
+    &:hover .video__unmute-button {
+      opacity: 1;
+    }
   }
 
   &__play-button,
-  &__mute-button {
+  &__mute-button,
+  &__unmute-button {
     position: absolute;
+  }
+
+  &__mute-button,
+  &__unmute-button {
+    opacity: 0;
   }
 
   &__play-button {
@@ -160,7 +171,8 @@
     }
   }
 
-  &__mute-button {
+  &__mute-button,
+  &__unmute-button {
     bottom: 32px;
     left: 32px;
     width: 40px;
